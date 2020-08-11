@@ -24,9 +24,6 @@ def publish_message(message):
     data = unicode(message, "utf-8")
     future = app.config["PUBLISHER"].publish(TOPIC, data)
 
-@app.route('/')
-def index():
-    
 
 if __name__ == '__main__':
     init_tracing()

@@ -1,0 +1,28 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    pythonchat
+{% endblock %}
+
+{% block navbar %}
+    <nav class='navbar navbar-default'>
+        <div class='navbar-header'>
+            <p class='navbar-brand'>pythonchat</p>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class='container'>
+        <h1>Welcome to pythonchat!</h1>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class='alert alert-{{category}}' role='alert'>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block app_content %}
+        {% endblock %}
+    </div>
+{% endblock %}

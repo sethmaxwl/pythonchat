@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <ul class="list-group">
+        {% for message in messages %}
+        <li class="list-group-item">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    <form action='publish' novalidate>
+        {{ form.message }}
+        <button class="btn btn-primary">Send</button>
+    </form>
+{% endblock %}
